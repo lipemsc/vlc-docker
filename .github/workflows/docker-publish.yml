@@ -68,7 +68,8 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          platforms: linux/amd64,linux/arm64, linux/arm32v5, linux/arm32v6, linux/arm32v7, i386
+          platforms: linux/amd64,linux/arm64, linux/armhf, i386
+          file: ./Containerfile
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
